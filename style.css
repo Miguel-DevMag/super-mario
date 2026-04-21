@@ -6,7 +6,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -14,7 +14,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  margin: 15px 0px 0px 20px;
+  margin: 20px 10px 0px 20px;
 }
 
 .cabeca-mario {
@@ -64,12 +64,19 @@ body {
 }
 
 .video-mario {
-  z-index: -1;
-  position: absolute;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
 }
-video {
-  width: 100dvw;
+
+.video-mario video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .mascara-video {
   background: linear-gradient(
@@ -80,7 +87,9 @@ video {
   );
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
+  z-index: -1;
   height: 100%;
 }
 
@@ -95,4 +104,60 @@ video {
 }
 .link-wts {
   cursor: pointer;
+}
+.formulario {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 30%;
+  left: -22%;
+  /*  
+  z-index: 1;
+  transform: translate(-50%, -50%); */
+  background-color: rgb(255, 255, 255);
+  padding: 20px 30px;
+  border-radius: 10px;
+  pointer-events: auto;
+  transition: 0.9s left ease-in-out;
+}
+.formulario h2 {
+  margin-bottom: 15px;
+  color: rgb(180, 52, 52);
+}
+.formulario label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.formulario input,
+.formulario textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formulario button {
+  background-color: rgb(180, 52, 52);
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.mascara-form {
+  background: linear-gradient(
+    109deg,
+    rgb(75 71 71 / 99%) 15%,
+    rgb(65 65 65 / 70%) 50%,
+    rgb(49 33 33 / 99%) 85%
+  );
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.9s opacity ease-in-out;
+  visibility: hidden;
 }

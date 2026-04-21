@@ -9,7 +9,7 @@
       rel="stylesheet"/>
     <title>Super Mario-Bros</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
+  </head> 
   <body>
     <div class="caixa-pai">
       <header class="header">
@@ -37,7 +37,7 @@
             Cogumelos - Mario e Luigi!
           </p>
           
-          <button class="btn">Saiba Mais</button>
+          <button class="btn" onclick="clickForm()">Saiba Mais</button>
         
         </div>
         
@@ -46,8 +46,11 @@
         </div>
       
     </main>
-     <div class="video-mario">
-        <video src="./image/video.mp4" autoplay loop muted></video>
+    <div class="video-mario">
+      <video src="./image/video.mp4" autoplay loop muted>
+      </video>
+    
+    </div>
         <div class="mascara-video"></div>
         
         <div class="caixa-wts">
@@ -56,6 +59,19 @@
           </a>
         </div>
 
+        <div>
+          <form class="formulario" >
+            <h2>Preencha o Formulário</h2>
+            <label for="nome">Nome:</label>
+            <input type="text" placeholder="Digite seu nome" name="nome" />
+            <label for="email">Email:</label>
+            <input type="email" placeholder="Digite seu email" name="email" />
+            <label for="descricao">Descrição:</label>
+            <textarea name="descricao" id="des" placeholder="Descreva seu problema"></textarea>
+              <button type="submit" class="btn">Enviar</button>
+          </form>
+          <div class="mascara-form" onclick="shadowForm()" ></div>
+        </div>
      </div>
   </body>
   <script src="script.js"></script>
